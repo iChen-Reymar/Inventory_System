@@ -23,14 +23,23 @@ export default function Products() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-10 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-            Products
-          </h1>
-          <p className="text-lg text-gray-600">Browse our complete inventory</p>
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-3d-lg cube-3d">
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            </div>
+            <div>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                Products
+              </h1>
+              <p className="text-lg text-gray-600 font-medium">Browse our complete inventory</p>
+            </div>
+          </div>
         </div>
 
         {/* Search and Filter */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 mb-8 border border-gray-100 animate-slide-up">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d p-6 mb-8 border border-gray-100 animate-slide-up card-3d">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="relative">
               <svg className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,7 +85,7 @@ export default function Products() {
             </div>
           </div>
         ) : filtered.length === 0 ? (
-          <div className="bg-white rounded-2xl shadow-lg p-16 text-center border border-gray-100">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d p-16 text-center border border-gray-100 card-3d">
             <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
@@ -97,7 +106,7 @@ export default function Products() {
 
         {/* Admin Quick Access */}
         {profile?.role === 'admin' && (
-          <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 shadow-xl border border-blue-200 animate-slide-up">
+          <div className="mt-12 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl p-8 shadow-3d-lg border border-blue-200 animate-slide-up card-3d">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="mb-4 md:mb-0">
                 <h3 className="text-2xl font-bold text-white mb-2">Admin Panel</h3>

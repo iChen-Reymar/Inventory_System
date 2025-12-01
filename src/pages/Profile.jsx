@@ -100,21 +100,30 @@ export default function Profile() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-10 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-3 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-            My Profile
-          </h1>
-          <p className="text-lg text-gray-600">Manage your account and view your activity</p>
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-3d-lg cube-3d">
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            </div>
+            <div>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                My Profile
+              </h1>
+              <p className="text-lg text-gray-600 font-medium">Manage your account and view your activity</p>
+            </div>
+          </div>
         </div>
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 animate-slide-up">
-          <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d p-6 border border-gray-100 card-3d animate-slide-up">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600 mb-2">Wallet Balance</p>
                 <p className="text-3xl font-bold text-gray-900">₱{walletBalance.toFixed(2)}</p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-14 h-14 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center shadow-3d cube-3d">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -122,13 +131,13 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d p-6 border border-gray-100 card-3d animate-slide-up">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600 mb-2">Total Orders</p>
                 <p className="text-3xl font-bold text-gray-900">{orders.length}</p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-3d cube-3d">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
@@ -136,13 +145,13 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d p-6 border border-gray-100 card-3d animate-slide-up">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600 mb-2">Total Spent</p>
                 <p className="text-3xl font-bold text-gray-900">₱{totalSpent.toFixed(2)}</p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-3d cube-3d">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
@@ -150,13 +159,13 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d p-6 border border-gray-100 card-3d animate-slide-up">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600 mb-2">Available Products</p>
                 <p className="text-3xl font-bold text-gray-900">{availableProducts}</p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-3d cube-3d">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                 </svg>
@@ -168,7 +177,7 @@ export default function Profile() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Profile Settings */}
           <div className="lg:col-span-2">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100 p-8 animate-slide-up">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d border border-gray-100 p-8 animate-slide-up card-3d">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Profile Settings</h2>
               <form onSubmit={handleUpdate} className="space-y-6">
                 <div>
@@ -227,7 +236,7 @@ export default function Profile() {
           {/* Wallet & Quick Actions */}
           <div className="lg:col-span-1 space-y-6">
             {/* Cash-In Wallet */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-gray-100 animate-slide-up">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d p-6 border border-gray-100 animate-slide-up card-3d">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Cash-In Wallet</h2>
               <form onSubmit={handleCashIn} className="space-y-4">
                 <div>
@@ -263,7 +272,7 @@ export default function Profile() {
             </div>
 
             {/* Quick Actions */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-gray-100 animate-slide-up">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d p-6 border border-gray-100 animate-slide-up card-3d">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Quick Actions</h2>
               <div className="space-y-3">
                 <Link
@@ -305,7 +314,7 @@ export default function Profile() {
         </div>
 
         {/* Recent Orders */}
-        <div className="mt-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-100 animate-slide-up">
+        <div className="mt-8 bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d border border-gray-100 animate-slide-up card-3d">
           <div className="p-6 border-b border-gray-200">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-bold text-gray-900">Recent Orders</h2>

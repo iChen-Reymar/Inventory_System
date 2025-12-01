@@ -147,12 +147,24 @@ export default function Checkout() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Checkout</h1>
+        <div className="mb-8 animate-fade-in">
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-3d-lg cube-3d">
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+              </svg>
+            </div>
+            <div>
+              <h1 className="text-4xl font-extrabold text-gray-900 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Checkout</h1>
+              <p className="text-gray-600 font-medium">Complete your purchase</p>
+            </div>
+          </div>
+        </div>
 
         {cart.length === 0 ? (
-          <div className="bg-white rounded-lg shadow-sm p-12 text-center border border-gray-200">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d p-12 text-center border border-gray-200 card-3d animate-slide-up">
             <svg className="mx-auto h-12 w-12 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
@@ -168,7 +180,7 @@ export default function Checkout() {
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d border border-gray-200 card-3d animate-slide-up">
                 <div className="p-6 border-b border-gray-200">
                   <h2 className="text-lg font-semibold text-gray-900">Cart Items</h2>
                 </div>
@@ -214,7 +226,7 @@ export default function Checkout() {
             </div>
 
             <div className="lg:col-span-1">
-              <div className="bg-white rounded-lg shadow-sm border border-gray-200 sticky top-8">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-3d border border-gray-200 sticky top-8 card-3d animate-slide-up" style={{ animationDelay: '0.1s' }}>
                 <div className="p-6 border-b border-gray-200">
                   <h2 className="text-lg font-semibold text-gray-900">Order Summary</h2>
                 </div>
@@ -264,7 +276,7 @@ export default function Checkout() {
                   <button
                     onClick={handlePay}
                     disabled={loading || walletBalance < total}
-                    className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-3 rounded-xl font-bold hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 transition-all duration-300 shadow-3d-lg card-3d disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {loading ? 'Processing...' : 'Complete Payment'}
                   </button>
